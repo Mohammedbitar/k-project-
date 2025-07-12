@@ -48,61 +48,17 @@ class homePage extends StatelessWidget {
               SizedBox(height: 10),
               funBTN(),
               SizedBox(height: 10),
-              TitNameMenu(MenuName: "Drink Menu"),
-              SizedBox(height: 10),
-              horzantil(),
-              SizedBox(height: 10),
               TitNameMenu(MenuName: "Food Menu"),
               SizedBox(height: 10),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    card(Price: "4.25 jd", ItemName: "Match", photo: img.match),
-                    card(
-                      Price: "5.00 jd",
-                      ItemName: "ice amricano",
-                      photo: img.Iamricano,
-                    ),
-                    card(
-                      Price: "6.25 jd",
-                      ItemName: "essperso",
-                      photo: img.essperso,
-                    ),
-                    card(
-                      Price: "4.25 jd",
-                      ItemName: "icw tea",
-                      photo: img.itea,
-                    ),
-                  ],
-                ),
-              ),
+              FoodCardS(),
+              SizedBox(height: 10),
+              TitNameMenu(MenuName: "Drink Menu"),
+              SizedBox(height: 10),
+              DrinkCards(),
               SizedBox(height: 10),
               TitNameMenu(MenuName: "Coffee beans"),
               SizedBox(height: 10),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    card(Price: "4.25 jd", ItemName: "Match", photo: img.match),
-                    card(
-                      Price: "5.00 jd",
-                      ItemName: "ice amricano",
-                      photo: img.Iamricano,
-                    ),
-                    card(
-                      Price: "6.25 jd",
-                      ItemName: "essperso",
-                      photo: img.essperso,
-                    ),
-                    card(
-                      Price: "4.25 jd",
-                      ItemName: "icw tea",
-                      photo: img.itea,
-                    ),
-                  ],
-                ),
-              ),
+              Coffeebag(),
             ],
           ),
         ),

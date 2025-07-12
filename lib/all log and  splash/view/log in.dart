@@ -5,9 +5,17 @@ import '../Wigets/log in BTN.dart';
 import '../Wigets/text Fild.dart';
 
 class LogIn extends StatelessWidget {
-  const LogIn({super.key});
+  final  _formKey = GlobalKey<FormState>();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
-  @override
+   LogIn({super.key});
+
+   final username = TextEditingController();
+   final password = TextEditingController();
+
+
+   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
@@ -57,32 +65,35 @@ class LogIn extends StatelessWidget {
                         SizedBox(height: 30),
                         SizedBox(
                           width: width * 0.8,
-                          child: Column(
-                            children: [
-                              txtFild(labeltext: "username"),
-                              SizedBox(height: 10),
-                              txtFild(labeltext: "password"),
-                              // SizedBox(height: 1),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "Forget Password",
-                                    style: TextStyle(
-                                      color: Colors.blue,
-                                      fontSize: 12,
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: Colors.blue,
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              children: [
+                                txtFild(labeltext: "username", textController: TextEditingController() ),
+                                SizedBox(height: 10),
+                                txtFild(labeltext: "password", textController: TextEditingController() ) ,
+                                // SizedBox(height: 1),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Forget Password",
+                                      style: TextStyle(
+                                        color: Colors.blue,
+                                        fontSize: 12,
+                                        decoration: TextDecoration.underline,
+                                        decorationColor: Colors.blue,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
 
-                        LoginBtn(),
+                        LoginBtn(usernameController: usernameController, passwordController: passwordController, formKey: _formKey),
                         SizedBox(height: 50),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,

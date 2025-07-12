@@ -1,4 +1,9 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'log in.dart';
 
 class splasch extends StatefulWidget {
   const splasch({super.key});
@@ -9,6 +14,18 @@ class splasch extends StatefulWidget {
 
 class _splaschState extends State<splasch> {
   @override
+ @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Timer(Duration(seconds: 4), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => LogIn()));
+
+    });
+    }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -26,7 +43,13 @@ class _splaschState extends State<splasch> {
                   ,fontFamily: 'Cormorant SC'),),
               Image.asset("Assets/Image/IMG-20241208-WA0047.jpg",width: 300,
                 height: 400,),
-              Text("PRWMUIM QUALITY COFFEE ",style: TextStyle(fontSize: 12 ,fontWeight: FontWeight.bold,letterSpacing: 7.5 ))
+              Text("PRWMUIM QUALITY COFFEE ",style: TextStyle(fontSize: 12 ,fontWeight: FontWeight.bold,letterSpacing: 7.5 )),
+              SizedBox(height: 15,),
+              const CupertinoActivityIndicator(
+
+                radius: 25,
+                color: Colors.black,
+              )
 
 
               
@@ -40,3 +63,12 @@ class _splaschState extends State<splasch> {
       ));
   }
 }
+
+
+
+
+
+
+
+
+
